@@ -79,7 +79,7 @@
     z-index: 1;
     right: 5rem;
 
-    background-color: $white-hex;
+    background-color: rbg($white-hex 0.3);
     @include tablet-breakpoint {
       right: 7.5rem;
     }
