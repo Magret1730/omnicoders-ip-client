@@ -1,0 +1,94 @@
+@use "../../styles/typography.scss" as *;
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins" as *;
+
+.quiz {
+  background-color: $white-hex;
+  padding: 6rem 1rem 17rem 1rem;
+
+  &__question {
+    @include question-font;
+    border-radius: 1.25rem;
+    box-shadow: 0.3125rem 0.3125rem 0.9375rem 0 rgba(0, 0, 0, 0.2);
+    padding: 3rem 2rem;
+    background-color: rgba($alternate-bg-color, 0.6);
+    font-weight: bold;
+    position: relative;
+
+    @include desktop-breakpoint {
+      width: 40%;
+      margin-left: 23.125rem;
+    }
+  }
+
+  &__options {
+    padding-top: 3rem;
+  }
+
+  &__option {
+    @include answer-font;
+    margin: 1rem 0rem;
+    padding: 16px 32px;
+    border-radius: 1.25rem;
+    background-color: rgba($alternate-bg-color, 0.6);
+
+    &:hover,
+    &--selected {
+      color: $white-hex;
+      background-color: $primary-text-color;
+      cursor: pointer;
+    }
+
+    @include desktop-breakpoint {
+      width: 40%;
+      margin-left: 23.125rem;
+    }
+  }
+
+  &__submit {
+    @include button-font;
+    margin-top: 3rem;
+    border-radius: 1.25rem;
+    border-width: 0;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    background-color: $yellow-hex;
+    font-weight: bold;
+    color: $white-hex;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-text-color;
+    }
+
+    @include desktop-breakpoint {
+      width: 40%;
+      margin-left: 23.125rem;
+    }
+  }
+
+  &__number {
+    @include body-text;
+    border: 0.25rem solid $primary-text-color;
+    border-radius: 50%;
+    // width: 5rem;
+    padding: 1.875rem;
+    position: absolute;
+    top: 2rem;
+    z-index: 1;
+    right: 5rem;
+
+    background-color: rbg($white-hex 0.3);
+    @include tablet-breakpoint {
+      right: 7.5rem;
+    }
+
+    @include desktop-breakpoint {
+      right: 36.875rem;
+    }
+
+    &-item {
+      align-self: center;
+    }
+  }
+}

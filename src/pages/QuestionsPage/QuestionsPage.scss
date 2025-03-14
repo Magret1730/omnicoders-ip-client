@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.questions-page {
+  background-color: $white-hex;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

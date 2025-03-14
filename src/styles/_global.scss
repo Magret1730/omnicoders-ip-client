@@ -1,0 +1,28 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+// Removes default styling on links
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}

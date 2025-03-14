@@ -1,0 +1,124 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: rgba($alternate-bg-color, 0.6);
+
+  &-page {
+    background-color: $white-hex;
+    padding: 2rem 2.5rem;
+    border-radius: 50%;
+    line-height: 1.2rem;
+    animation: bounceIn 5s ease-out;
+
+    @include tablet-breakpoint {
+      padding: 4rem;
+    }
+
+    @include desktop-breakpoint {
+      padding: 5rem;
+    }
+
+    &-title {
+      @include logo-title;
+      color: $primary-text-color;
+    }
+
+    &-subtitle {
+      @include logo-title;
+      display: flex;
+      justify-content: center;
+      color: $secondary-text-color;
+
+      @include tablet-breakpoint {
+        font-size: 1.2rem;
+      }
+
+      @include desktop-breakpoint {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.summary-message {
+  @include body-text;
+
+  color: $blue-hex;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.summary-fact {
+  @include body-text;
+  color: $primary-text-color;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.summary-more {
+  @include body-text;
+  color: black;
+  margin-top: 10px;
+  text-align: center;
+}
+
+// .summary-page__back {
+//     display: flex;
+//     justify-content: flex-start;
+// }
+
+.summary-page__back {
+  // display: inline-block;
+  display: block;
+  font-size: 1.2rem;
+  color: $primary-text-color;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease-in-out;
+  text-align: left;
+
+  &:hover {
+    color: darken($primary-text-color, 15%);
+    text-decoration: underline;
+  }
+}
