@@ -8,39 +8,75 @@
   flex-direction: column;
   height: 100vh;
   background-color: $alternate-bg-color;
+  font-family: $typeface-primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $alternate-bg-color;
 
   &__logo {
     margin-top: 10rem;
     background-color: $alternate-color;
-    // by adding width and same height you turn it into a circle
-    width: 8rem;
-    height: 8rem;
     padding: 2rem 1.5rem;
     border-radius: 50%;
     line-height: 0.9rem;
     animation: bounceIn 5s ease-out;
-
-    @include tablet-breakpoint {
-      padding: 2.5rem 2rem;
-      margin-top: 6rem;
-      line-height: 1.2rem;
-    }
-
-    &-title {
-      font-size: 1.5rem;
-      color: $primary-text-color;
+    &__logo {
+      margin-top: 10rem;
+      background-color: $alternate-color;
+      // by adding width and same height you turn it into a circle
+      width: 8rem;
+      height: 8rem;
+      padding: 2rem 1.5rem;
+      border-radius: 50%;
+      line-height: 0.9rem;
+      animation: bounceIn 5s ease-out;
 
       @include tablet-breakpoint {
-        font-size: 2rem;
+        padding: 2.5rem 2rem;
+        margin-top: 6rem;
+        line-height: 1.2rem;
       }
-    }
+      @include tablet-breakpoint {
+        padding: 2.5rem 2rem;
+        margin-top: 6rem;
+        line-height: 1.2rem;
+      }
 
-    &-subtitle {
-      font-size: 0.7rem;
-      display: flex;
-      justify-content: flex-end;
-      color: $secondary-text-color;
+      &-title {
+        font-size: 1.5rem;
+        color: $primary-text-color;
+        &-title {
+          font-size: 1.5rem;
+          color: $primary-text-color;
 
+          @include tablet-breakpoint {
+            font-size: 2rem;
+          }
+        }
+        @include tablet-breakpoint {
+          font-size: 2rem;
+        }
+      }
+
+      &-subtitle {
+        font-size: 0.7rem;
+        display: flex;
+        justify-content: flex-end;
+        color: $secondary-text-color;
+        &-subtitle {
+          font-size: 0.7rem;
+          display: flex;
+          justify-content: flex-end;
+          color: $secondary-text-color;
+
+          @include tablet-breakpoint {
+            font-size: 1rem;
+          }
+        }
+      }
       @include tablet-breakpoint {
         font-size: 1rem;
       }
@@ -51,21 +87,40 @@
     font-size: 1.125rem;
     margin-bottom: 1.875rem;
     color: $primary-text-color;
+    &__text {
+      font-size: 1.125rem;
+      margin-bottom: 1.875rem;
+      color: $primary-text-color;
 
+      @include tablet-breakpoint {
+        font-size: 1.5rem;
+      }
+    }
     @include tablet-breakpoint {
       font-size: 1.5rem;
     }
   }
 
   &__button {
-    font-family: "Roboto Condensed", sans-serif;
+    margin-bottom: 10rem;
     @include button-style(
       $alternate-color,
       $primary-cta-color,
       $primary-hover-cta-color
     );
-    margin-bottom: 10rem;
+    &__button {
+      font-family: "Roboto Condensed", sans-serif;
+      @include button-style(
+        $alternate-color,
+        $primary-cta-color,
+        $primary-hover-cta-color
+      );
+      margin-bottom: 10rem;
 
+      @include tablet-breakpoint {
+        margin-bottom: 6rem;
+      }
+    }
     @include tablet-breakpoint {
       margin-bottom: 6rem;
     }
@@ -77,7 +132,14 @@
     transform: scale(0.3);
     opacity: 0;
   }
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
 
+  50% {
+    transform: scale(1.1);
+  }
   50% {
     transform: scale(1.1);
   }
@@ -85,7 +147,14 @@
   70% {
     transform: scale(0.9);
   }
+  70% {
+    transform: scale(0.9);
+  }
 
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
   100% {
     transform: scale(1);
     opacity: 1;
@@ -97,7 +166,15 @@
     transform: translateX(-100%);
     opacity: 0;
   }
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
   100% {
     transform: translateX(0);
     opacity: 1;

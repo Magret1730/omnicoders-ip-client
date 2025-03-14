@@ -5,8 +5,8 @@ function HomePage() {
   return (
     <section className="home-page">
       <section className="home-page__logo">
-        <h1 className="home-page__logo-title">QUIZ</h1>
-        <h3 className="home-page__logo-subtitle">NAME</h3>
+        <h1 className="home-page__logo-title">SEAM</h1>
+        <h3 className="home-page__logo-subtitle">LESS</h3>
       </section>
 
       <p className="home-page__text">Sentence - AI knowledge test?</p>

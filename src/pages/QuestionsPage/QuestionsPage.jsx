@@ -1,7 +1,10 @@
+import Quiz from "../../components/Quiz/Quiz";
+import "./QuestionsPage.scss";
+
 function QuestionsPage() {
   return (
-    <div>
-      <h1>Questions Page</h1>
+    <div className="questions-page">
+      <Quiz></Quiz>
     </div>
   );
 }
