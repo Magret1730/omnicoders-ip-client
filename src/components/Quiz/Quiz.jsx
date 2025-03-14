@@ -5,6 +5,9 @@ import PopUp from "../PopUp/PopUp.jsx";
 import { useNavigate } from "react-router-dom";
 
 
+
+const API_URL = import.meta.env.VITE_API_URL; 
+
 function Quiz() {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -20,7 +23,7 @@ function Quiz() {
   useEffect(() => {
     const getQuestions = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/questions");
+        const response = await axios.get(`${API_URL}/questions`);
         setQuestions(response.data);
         setLoading(false);
       } catch (error) {
