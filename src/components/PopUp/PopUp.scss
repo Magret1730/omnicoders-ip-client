@@ -1,73 +1,74 @@
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;  // Ensures it is on top of other elements
+@use "../../styles/typography.scss" as *;
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins" as *;
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;  
+}
+
+.popup__content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.popup__content.open {
+  transform: scale(1.1);
+}
+
+.popup__body {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.popup__body p {
+  margin-top: 1rem;
+  margin-bottom: 20px;
+  font-family: "Roboto";
+  font-size: 1rem;
+  color: #333;
+  font-weight: normal;
+}
+
+.popup__body button {
+  margin-top: 20px;
+  padding: 0.5rem 3rem;
+  background-color: $primary-text-color;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.popup__body button:hover {
+  background-color: $primary-hover-cta-color;
+}
+
+@media (max-width: 480px) {
+  .popup__content {
+    width: 90%;
   }
-  
-  /* PopUp Content */
-  .popup-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    transform: scale(1);
-  }
-  
-  /* PopUp Content on Open (Optional: Animation for smooth transition) */
-  .popup-content.open {
-    transform: scale(1.1);
-  }
-  
-  /* PopUp Body */
-  .popup-body {
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-  }
-  
-  /* Close Button */
-  .popup-body button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #0078d4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+  .popup__body {
     font-size: 14px;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #005a8d;
-    }
   }
-  
-  /* Text styles */
-  .popup-body p {
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #333;
-    font-weight: normal;
-  }
-  
-  /* Mobile responsiveness */
-  @media (max-width: 480px) {
-    .popup-content {
-      width: 90%;
-    }
-  
-    .popup-body {
-      font-size: 14px;
-    }
-  }
+}
