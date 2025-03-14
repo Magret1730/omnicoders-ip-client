@@ -1,45 +1,49 @@
 import React, { useEffect, useState } from "react";
-import ReactModal from "react-modal";
+import axios from "axios"; // ✅ Added missing axios import
 import PropTypes from "prop-types";
-// import "./PopUp.scss";
+import "./PopUp.scss";
 
-ReactModal.setAppElement("#root");
+const API_URL = import.meta.env.VITE_API_URL; // ✅ Define API_URL properly
 
-const API_URL = import.meta.env.VITE_API_URL;
-
-const PopUp = ({ isOpen, onClose, questionId }) => {
+function PopUp({ isOpen, onClose, questionId, isAnswerCorrect, handleNextQuestion }) {
   const [explanation, setExplanation] = useState("");
 
   useEffect(() => {
     if (isOpen && questionId) {
-      fetch(`${API_URL}/explanation/${questionId}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setExplanation(data.explanation);
+      axios
+        .get(`${API_URL}/explanation/${questionId}`) // ✅ Using API_URL instead of hardcoded localhost
+        .then((response) => {
+          setExplanation(response.data.explanation);
         })
-        .catch((error) => console.error("Error fetching explanation:", error));
+        .catch((error) => {
+          console.error("Error fetching explanation:", error);
+          setExplanation("No explanation available.");
+        });
     }
   }, [isOpen, questionId]);
 
+  if (!isOpen) return null; // ✅ Prevents rendering when the popup is closed
+
   return (
-    <ReactModal
-      isOpen={isOpen}
-      onRequestClose={onClose}
-      className="popup-content"
-      overlayClassName="popup-overlay"
-    >
-      <div className="popup-body">
-        <p>{explanation || "Loading explanation..."}</p>
-        <button onClick={onClose}>Close</button>
+    <div className="popup">
+    <div className="popup__content">
+      <h3>{isAnswerCorrect ? "✅ Correct!" : "❌ Wrong Answer"}</h3>
+      <div className="popup__body">
+        <p>{explanation}</p>
+        <button onClick={handleNextQuestion}>Next</button>
       </div>
-    </ReactModal>
+    </div>
+  </div>
   );
-};
+}
+
 
 PopUp.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   questionId: PropTypes.string.isRequired,
+  isAnswerCorrect: PropTypes.bool,
+  handleNextQuestion: PropTypes.func.isRequired,
 };
 
 export default PopUp;
