@@ -50,12 +50,10 @@
 
     @include tablet-breakpoint {
       padding: 5.5rem;
-      line-height: 1.7rem;
     }
 
     @include desktop-breakpoint {
       padding: 7.5rem;
-      line-height: 2rem;
     }
 
     &-title {
@@ -64,7 +62,7 @@
     }
 
     &-subtitle {
-      @include logo-subtitle;
+      @include logo-title;
       display: flex;
       justify-content: center;
       color: $secondary-text-color;

@@ -9,7 +9,7 @@
 
   &__question {
     @include question-font;
-    border-radius: 0.625rem;
+    border-radius: 1.25rem;
     box-shadow: 0.3125rem 0.3125rem 0.9375rem 0 rgba(0, 0, 0, 0.2);
     padding: 3rem 2rem;
     background-color: rgba($alternate-bg-color, 0.6);
@@ -17,8 +17,8 @@
     position: relative;
 
     @include desktop-breakpoint {
-      width: 50%;
-      margin-left: 19.375rem;
+      width: 40%;
+      margin-left: 23.125rem;
     }
   }
 
@@ -30,7 +30,7 @@
     @include answer-font;
     margin: 1rem 0rem;
     padding: 16px 32px;
-    border-radius: 0.625rem;
+    border-radius: 1.25rem;
     background-color: rgba($alternate-bg-color, 0.6);
 
     &:hover,
