@@ -43,17 +43,17 @@
 
   &-page {
     background-color: $white-hex;
-    padding: 3rem 2.5rem;
+    padding: 2rem 2.5rem;
     border-radius: 50%;
     line-height: 1.2rem;
     animation: bounceIn 5s ease-out;
 
     @include tablet-breakpoint {
-      padding: 5.5rem;
+      padding: 4rem;
     }
 
     @include desktop-breakpoint {
-      padding: 7.5rem;
+      padding: 5rem;
     }
 
     &-title {
@@ -100,4 +100,25 @@
   color: black;
   margin-top: 10px;
   text-align: center;
+}
+
+// .summary-page__back {
+//     display: flex;
+//     justify-content: flex-start;
+// }
+
+.summary-page__back {
+  // display: inline-block;
+  display: block;
+  font-size: 1.2rem;
+  color: $primary-text-color;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease-in-out;
+  text-align: left;
+
+  &:hover {
+    color: darken($primary-text-color, 15%);
+    text-decoration: underline;
+  }
 }
