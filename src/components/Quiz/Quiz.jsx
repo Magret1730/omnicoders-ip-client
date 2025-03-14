@@ -10,6 +10,11 @@ function Quiz() {
   const [error, setError] = useState(null);
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [questionId, setQuestionId] = useState("");
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleOptionClick = (index) => {
+    setSelectedOption(index);
+  };
 
   useEffect(() => {
     const getQuestions = async () => {
@@ -57,7 +62,7 @@ function Quiz() {
         {currentQuestionData ? (
           <>
             <div className="quiz__number">
-              <p>
+              <p className="quiz__number-item">
                 {currentQuestion + 1}/{questions.length}
               </p>
             </div>
@@ -66,7 +71,13 @@ function Quiz() {
             </div>
             <div className="quiz__options">
               {currentQuestionData.options.map((option, index) => (
-                <div className="quiz__option" key={index}>
+                <div
+                  className={`quiz__option ${
+                    selectedOption === index ? "quiz__option--selected" : ""
+                  }`}
+                  onClick={() => handleOptionClick(index)}
+                  key={index}
+                >
                   <p>{option}</p>
                 </div>
               ))}
