@@ -1,0 +1,41 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.home-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $secondary-background-color;
+    font-family: $typeface-primary;
+
+    &__logo {
+        margin-top: 10rem;
+        background-color: $alternate-color;
+        padding: 2rem 1.5rem;
+        border-radius: 50%;
+
+        &-title {
+            font-size: 1.5rem;
+        }
+
+        &-subtitle {
+            font-size: 0.7rem;
+            display: flex;
+            justify-content: flex-end;
+            color: $primary-cta-color;
+        }
+    }
+
+    &__text {
+        font-size: 1.125rem;
+        margin-bottom: 1.875rem;
+        color: $alternate-color;
+    }
+
+    &__button {
+        @include button-style($alternate-color, $primary-cta-color, $primary-hover-cta-color);
+        margin-bottom: 10rem;
+    }
+}

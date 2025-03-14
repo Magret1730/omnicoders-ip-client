@@ -1,0 +1,17 @@
+@use "./variables" as *;
+
+@mixin button-style($color, $btnBgColor, $hoverBtnBgColor) {
+    padding: .6rem 8rem;
+    background-color: $btnBgColor;
+    color: $color;
+    border: none;
+    border-radius: .625rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $hoverBtnBgColor;
+        font-weight: 700;
+    }
+}
