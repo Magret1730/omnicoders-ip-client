@@ -1,4 +1,5 @@
 import "./HomePage.scss";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -9,7 +10,7 @@ function HomePage() {
       </section>
 
       <p class="home-page__text">Sentence - AI knowledge test?</p>
-      <button class="home-page__button">Start</button>
+      <Link to="/questions"><button class="home-page__button">Start</button></Link>
     </section>
   );
 }
