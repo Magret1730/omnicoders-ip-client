@@ -13,6 +13,7 @@ function SummaryPage() {
           {score} out of {totalQuestions}
         </h3>
       </section>
+      <div className="home-page__text">AI is already part of your life.</div>
     </section>
   );
 }

@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  // height: 100vh;
   background-color: rgba($alternate-bg-color, 0.6);
 
   &__logo {
@@ -73,9 +73,6 @@
     @include tablet-breakpoint {
       margin-bottom: 6rem;
     }
-  }
-  @include tablet-breakpoint {
-    margin-bottom: 6rem;
   }
 
   @keyframes bounceIn {

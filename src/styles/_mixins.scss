@@ -84,12 +84,12 @@
   }
 }
 @mixin answer-font {
-  font-size: 0.8125rem;
+  font-size: 1rem;
   line-height: 1.25rem;
   font-family: "Roboto Condensed";
   font-style: normal;
   @include tablet {
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.375rem;
   }
 }
