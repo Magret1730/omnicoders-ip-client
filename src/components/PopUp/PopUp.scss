@@ -8,16 +8,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.80);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;  
+  z-index: 10;  
 }
 
 .popup__content {
   background-color: #fff;
-  padding: 20px;
+  padding: 1.5rem;
   border-radius: 10px;
   width: 400px;
   max-width: 90%;
@@ -49,13 +49,14 @@
 
 .popup__body button {
   margin-top: 20px;
-  padding: 0.5rem 3rem;
+  padding: 1rem 3rem;
   background-color: $primary-text-color;
   color: white;
   border: none;
+  font-family: "Roboto";
+  font-size: 1rem;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 14px;
   transition: background-color 0.3s ease;
 }
 
