@@ -1,5 +1,8 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
 .questions-page {
-  background-color: rgb(239, 237, 237);
+  background-color: $white-hex;
 }
 
 * {

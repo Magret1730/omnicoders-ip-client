@@ -1,19 +1,20 @@
 @use "./typography" as *;
 
-// $typeface-primary: "Robot";
+$typeface-primary: "Roboto Condensed";
 $roboto: font-family "Roboto Condensed", sans-serif;
 
-$alternate-bg-color: #b9a4cb;
+$alternate-bg-color: #c1b3ce;
 $primary-background-color: #a659e9;
 $primary-text-color: #6512ae;
 $secondary-background-color: #cfb1e9;
-$primary-cta-color: #041959;
+$primary-cta-color: #1a2957;
 $primary-hover-cta-color: #060506;
 $alternate-color: #fff;
 $secondary-text-color: #f8c704;
 
-$tablet-breakpoint: 48rem;
-$desktop-breakpoint: 80rem;
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
 
 //Alternative colors
 $pink-hex: #d9559d;

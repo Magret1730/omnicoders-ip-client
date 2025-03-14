@@ -10,13 +10,9 @@ function HomePage() {
       </section>
 
       <p className="home-page__text">
-        Knowledge is power, and understanding AI means unlocking new
-        opportunities. AI isn’t here to replace you—it’s here to work with you,
-        helping businesses grow, making daily tasks easier, and enhancing
-        creativity. From smart recommendations to automated assistants, AI is
-        already part of our world in ways you might not even realize. Take this
-        quiz to discover how AI is seamlessly integrated into everyday life and
-        how it can be a powerful tool, not a competitor.
+        Test your AI knowledge! AI isn’t here to replace you—it’s here to help,
+        from smart recommendations to automated assistants. Take this quiz to
+        see how AI enhances daily life and unlocks new opportunities!
       </p>
       <Link to="/questions">
         <button className="home-page__button">Start</button>

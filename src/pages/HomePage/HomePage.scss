@@ -7,81 +7,42 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  background-color: rgba($white-hex, 1);
+  background-color: rgba($alternate-bg-color, 0.6);
 
   &__logo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
     justify-content: center;
     margin-top: 10rem;
     background-color: rgb($font-hex, 0.7);
     // by adding width and same height you turn it into a circle
-    width: 12rem;
-    height: 12rem;
-    padding: 2rem 1.5rem;
+    padding: 2rem;
     border-radius: 50%;
-    line-height: 0.9rem;
     animation: bounceIn 5s ease-out;
-    background-color: $blue-hex;
-    // background: radial-gradient(
-    //     circle,
-    //     rgba($alternate-bg-color, 0.3) 10%,
-    //     transparent 40%
-    //   ),
-    //   conic-gradient(
-    //     from 180deg at 50% 50%,
-    //     $blue-hex 0%,
-    //     $alternate-bg-color 20%,
-    //     $pink-hex 40%,
-    //     $orange-hex 60%,
-    //     $yellow-hex 80%,
-    //     $green-hex 95%,
-    //     $blue-hex 100%
-    //   );
+    background-color: $white-hex;
 
-      @include tablet-breakpoint {
-        padding: 2.5rem 2rem;
-        margin-top: 6rem;
-        line-height: 1.2rem;
-      }
-      @include tablet-breakpoint {
-        padding: 2.5rem 2rem;
-        margin-top: 6rem;
-        line-height: 1.2rem;
-      }
+    @include tablet-breakpoint {
+      padding: 2.5rem;
+    }
 
     &-title {
-      margin-top: 15%;
-      font-size: 2.5rem;
-      color: $white-hex;
-
-      @include tablet-breakpoint {
-        font-size: 3.5rem;
-      }
+      @include logo-title;
+      color: $primary-text-color;
     }
 
     &-subtitle {
-      font-size: 1.5rem;
+      @include logo-subtitle;
       display: flex;
       justify-content: flex-end;
       color: $secondary-text-color;
-
-          @include tablet-breakpoint {
-            font-size: 1rem;
-          }
-        }
-      }
-      @include tablet-breakpoint {
-        font-size: 1rem;
-      }
     }
   }
 
   &__text {
-    border: 3px solid transparent;
-    border-radius: 20px;
+    @include body-text;
+    border: 0.1875rem solid transparent;
+    border-radius: 1.25rem;
     border-image-source: conic-gradient(
       from 180deg at 50% 50%,
       $blue-hex 0%,
@@ -93,86 +54,82 @@
       $blue-hex 100%
     );
     border-image-slice: 1;
-    font-family: "Lora", serif;
-    height: 35%;
-    width: 60%;
-    border-radius: 20px;
-    font-size: 1.125rem;
-    margin-bottom: 1.875rem;
+    border-radius: 1.25rem;
     color: $font-hex;
     text-align: center;
-    padding: 40px;
+    padding: 2.5rem;
+    margin: 2.5rem;
 
     @include tablet-breakpoint {
-      font-size: 1rem;
+      padding: 3.75rem;
+      margin: 5rem;
     }
   }
 
   &__button {
-    font-family: "Roboto Condensed", sans-serif;
-    @include button-style($alternate-color, $yellow-hex, $orange-hex);
+    @include button-font;
+    @include button-style($alternate-color, $yellow-hex, $primary-text-color);
     margin-bottom: 10rem;
 
-      @include tablet-breakpoint {
-        margin-bottom: 6rem;
-      }
-    }
     @include tablet-breakpoint {
       margin-bottom: 6rem;
     }
   }
-}
-
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.3);
-    opacity: 0;
-  }
-  0% {
-    transform: scale(0.3);
-    opacity: 0;
+  @include tablet-breakpoint {
+    margin-bottom: 6rem;
   }
 
-  50% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.1);
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+
+    70% {
+      transform: scale(0.9);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 
-  70% {
-    transform: scale(0.9);
-  }
-  70% {
-    transform: scale(0.9);
-  }
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
 
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 }

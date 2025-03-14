@@ -1,53 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap");
 
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("../assets/fonts/Roboto/RobotoCondensed-VariableFont_wght.ttf")
-//     format("truetype");
-//   font-weight: 400;
-// }
-
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("../assets/fonts/Roboto/RobotoCondensed-VariableFont_wght.ttf")
-//     format("truetype");
-//   font-weight: 400;
-//   font-style: italic;
-// }
-
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("../assets/fonts/Roboto/RobotoCondensed-VariableFont_wght.ttf")
-//     format("truetype");
-//   font-weight: 700;
-// }
-
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("../assets/fonts/Roboto/RobotoCondensed-VariableFont_wght.ttf")
-//     format("truetype");
-//   font-weight: 100;
-// }
-
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("../assets/fonts/Roboto/RobotoCondensed-Italic-VariableFont_wght.ttf")
-//     format("truetype");
-//   font-weight: 100;
-//   font-style: italic;
-// }
-// @font-face {
-//   font-family: "TitilliumWeb-Regular";
-//   src: url("../../assets/fonts/TitilliumWeb-Regular.ttf") format("truetype");
-//   font-weight: 400;
-// }
-
-// @font-face {
-//   font-family: "TitilliumWeb-SemiBold";
-//   src: url("../../assets/fonts/TitilliumWeb-SemiBold.ttf") format("truetype");
-//   font-weight: 600;
-// }
 .roboto-condensed {
   font-family: "Roboto Condensed", sans-serif;
   font-optical-sizing: auto;
@@ -58,5 +12,11 @@
   font-family: "Lora", serif;
   font-optical-sizing: auto;
   font-weight: 600;
+  font-style: normal;
+}
+.rokkitt-third {
+  font-family: "Rokkitt", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
 }
