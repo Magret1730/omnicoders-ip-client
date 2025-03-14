@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import "./SummaryPage.scss";
+import { Link } from "react-router-dom";
 
 function SummaryPage() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function SummaryPage() {
   }
   return (
     <section className="summary">
+      <Link to="/" className="summary-page__back">&larr; Back</Link>
       <section className="summary-page">
         <h1 className="summary-page-title">SCORE</h1>
         <h3 className="summary-page-subtitle">
