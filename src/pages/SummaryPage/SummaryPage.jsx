@@ -24,15 +24,18 @@ function SummaryPage() {
           {score} out of {totalQuestions}
         </h3>
       </section>
-      <p className="summary-message">{message}</p>
-      <p className="summary-fact">
-        Fun Fact: Did you know that AI is also used in areas like art creation,
-        climate predictions, and even helping to design new products?
-      </p>
-      <p className="summary-more">
-        Want to learn more about AI and its impact on the future? Check out more
-        resources on AI!
-      </p>
+      <div className="home-page__text">
+        <p className="summary-message">{message}</p>
+        <p className="summary-fact">
+          Fun Fact: Did you know that AI is also used in areas like art
+          creation, climate predictions, and even helping to design new
+          products?
+        </p>
+        <p className="summary-more">
+          Want to learn more about AI and its impact on the future? Check out
+          more resources on AI!
+        </p>
+      </div>
     </section>
   );
 }

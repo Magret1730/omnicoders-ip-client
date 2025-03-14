@@ -80,9 +80,9 @@
 }
 
 .summary-message {
-  width: 60%;
-  font-size: 1.2rem;
-  color: #333;
+  @include body-text;
+
+  color: $blue-hex;
   font-weight: normal;
   margin-bottom: 20px;
   text-align: center;
@@ -90,17 +90,15 @@
 }
 
 .summary-fact {
-  width: 60%;
-  font-size: 1rem;
-  color: #0078d4;
+  @include body-text;
+  color: $primary-text-color;
   font-weight: bold;
   margin-bottom: 15px;
   text-align: center;
 }
 
 .summary-more {
-  width: 60%;
-  font-size: 1rem;
+  @include body-text;
   color: #555;
   margin-top: 10px;
   text-align: center;
