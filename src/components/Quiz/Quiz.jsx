@@ -2,6 +2,8 @@ import "./Quiz.scss";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import PopUp from "../PopUp/PopUp.jsx";
+import { useNavigate } from "react-router-dom";
+
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
@@ -12,6 +14,8 @@ function Quiz() {
   const [questionId, setQuestionId] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null); 
+  const [score, setScore] = useState(0); 
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const getQuestions = async () => {
@@ -42,6 +46,7 @@ function Quiz() {
 
     if (questions[currentQuestion].options[selectedOption] === correctOption) {
       setIsAnswerCorrect(true);
+      setScore((prevScore) => prevScore + 1);
     } else {
       setIsAnswerCorrect(false);
     }
@@ -65,8 +70,9 @@ function Quiz() {
       setIsAnswerCorrect(null);
       setSelectedOption(null); 
       setIsPopUpOpen(false);
+      setSelectedOption(null);
     } else {
-      alert("Quiz Completed!");
+      navigate("/summary", { state: { score, totalQuestions: questions.length } });
     }
   };
 
