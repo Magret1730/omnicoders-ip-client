@@ -1,5 +1,5 @@
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/variables" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
 
 .button {
   @include type-h3;
@@ -21,7 +21,7 @@
   }
 
   &__start {
-    background-color: $green;
+    background-color: $primary-cta-color;
     color: $white;
 
     &:hover {
