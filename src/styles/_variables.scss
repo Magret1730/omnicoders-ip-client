@@ -1,6 +1,7 @@
 @use "./typography" as *;
 
-$typeface-primary: "Roboto";
+// $typeface-primary: "Robot";
+$roboto: font-family "Roboto Condensed", sans-serif;
 
 $alternate-bg-color: #b9a4cb;
 $primary-background-color: #a659e9;
@@ -9,7 +10,7 @@ $secondary-background-color: #cfb1e9;
 $primary-cta-color: #041959;
 $primary-hover-cta-color: #9e7f03;
 $alternate-color: #fff;
-$secondary-text-color: #F8C704;
+$secondary-text-color: #f8c704;
 
 $tablet-breakpoint: 48rem;
 $desktop-breakpoint: 80rem;

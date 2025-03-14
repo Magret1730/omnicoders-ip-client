@@ -1,31 +1,55 @@
-@font-face {
-    font-family: "Roboto";
-    src: url("../assets/fonts/Roboto/static/Roboto-Regular.ttf");
-    font-weight: 400;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
-@font-face {
-    font-family: "Roboto";
-    src: url("../assets/fonts/Roboto/static/Roboto-Italic.ttf");
-    font-weight: 400;
-    font-style: italic;
-}
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("../assets/fonts/Roboto/RobotoCondensed-VariableFont_wght.ttf")
+//     format("truetype");
+//   font-weight: 400;
+// }
 
-@font-face {
-    font-family: "Roboto";
-    src: url("../assets/fonts/Roboto/static/Roboto-Bold.ttf");
-    font-weight: 700;
-}
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("../assets/fonts/Roboto/RobotoCondensed-VariableFont_wght.ttf")
+//     format("truetype");
+//   font-weight: 400;
+//   font-style: italic;
+// }
 
-@font-face {
-    font-family: "Roboto";
-    src: url("../assets/fonts/Roboto/static/Roboto-Thin.ttf");
-    font-weight: 100;
-}
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("../assets/fonts/Roboto/RobotoCondensed-VariableFont_wght.ttf")
+//     format("truetype");
+//   font-weight: 700;
+// }
 
-@font-face {
-    font-family: "Roboto";
-    src: url("../assets/fonts/Roboto/static/Roboto-ThinItalic.ttf");
-    font-weight: 100;
-    font-style: italic;
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("../assets/fonts/Roboto/RobotoCondensed-VariableFont_wght.ttf")
+//     format("truetype");
+//   font-weight: 100;
+// }
+
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("../assets/fonts/Roboto/RobotoCondensed-Italic-VariableFont_wght.ttf")
+//     format("truetype");
+//   font-weight: 100;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: "TitilliumWeb-Regular";
+//   src: url("../../assets/fonts/TitilliumWeb-Regular.ttf") format("truetype");
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: "TitilliumWeb-SemiBold";
+//   src: url("../../assets/fonts/TitilliumWeb-SemiBold.ttf") format("truetype");
+//   font-weight: 600;
+// }
+.roboto-condensed {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
