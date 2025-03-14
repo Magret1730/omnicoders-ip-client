@@ -39,8 +39,7 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  background-color: $alternate-bg-color;
-  font-family: $typeface-primary;
+  background-color: rgba($alternate-bg-color, 0.6);
 
   &-page {
     background-color: $white-hex;
