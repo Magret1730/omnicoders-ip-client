@@ -39,7 +39,8 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  background-color: rgba($alternate-bg-color, 0.6);
+  background-color: $alternate-bg-color;
+  font-family: $typeface-primary;
 
   &-page {
     background-color: $white-hex;
@@ -76,4 +77,31 @@
       }
     }
   }
+}
+
+.summary-message {
+  width: 60%;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: normal;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.summary-fact {
+  width: 60%;
+  font-size: 1rem;
+  color: #0078d4;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.summary-more {
+  width: 60%;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+  text-align: center;
 }
