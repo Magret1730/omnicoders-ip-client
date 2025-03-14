@@ -1,4 +1,15 @@
+@use "./typography" as *;
+
+$typeface-primary: "Roboto";
+
+$alternate-bg-color: #b9a4cb;
 $primary-background-color: #a659e9;
 $primary-text-color: #6512ae;
 $secondary-background-color: #cfb1e9;
-$primary-cta-color: #f8c704;
+$primary-cta-color: #041959;
+$primary-hover-cta-color: #9e7f03;
+$alternate-color: #fff;
+$secondary-text-color: #F8C704;
+
+$tablet-breakpoint: 48rem;
+$desktop-breakpoint: 80rem;
