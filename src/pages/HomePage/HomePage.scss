@@ -7,7 +7,7 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: $secondary-background-color;
+    background-color: $alternate-bg-color;
     font-family: $typeface-primary;
 
     &__logo {
@@ -15,27 +15,84 @@
         background-color: $alternate-color;
         padding: 2rem 1.5rem;
         border-radius: 50%;
+        line-height: 0.9rem;
+        animation: bounceIn 5s ease-out;
+
+        @include tablet-breakpoint {
+            padding: 2.5rem 2rem;
+            margin-top: 6rem;
+            line-height: 1.2rem;
+        }
 
         &-title {
             font-size: 1.5rem;
+            color: $primary-text-color;
+
+            @include tablet-breakpoint {
+                font-size: 2rem;
+            }
         }
 
         &-subtitle {
             font-size: 0.7rem;
             display: flex;
             justify-content: flex-end;
-            color: $primary-cta-color;
+            color: $secondary-text-color;
+
+            @include tablet-breakpoint {
+                font-size: 1rem;
+            }
         }
     }
 
     &__text {
         font-size: 1.125rem;
         margin-bottom: 1.875rem;
-        color: $alternate-color;
+        color: $primary-text-color;
+
+        @include tablet-breakpoint {
+            font-size: 1.5rem;
+        }
     }
 
     &__button {
         @include button-style($alternate-color, $primary-cta-color, $primary-hover-cta-color);
         margin-bottom: 10rem;
+
+        @include tablet-breakpoint {
+            margin-bottom: 6rem;
+        }
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
