@@ -7,18 +7,39 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  background-color: $alternate-bg-color;
+  background-color: rgba($white-hex, 1);
 
   &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
     margin-top: 10rem;
-    background-color: $alternate-color;
+    background-color: rgb($font-hex, 0.7);
     // by adding width and same height you turn it into a circle
-    width: 8rem;
-    height: 8rem;
+    width: 12rem;
+    height: 12rem;
     padding: 2rem 1.5rem;
     border-radius: 50%;
     line-height: 0.9rem;
     animation: bounceIn 5s ease-out;
+    background-color: $blue-hex;
+    // background: radial-gradient(
+    //     circle,
+    //     rgba($alternate-bg-color, 0.3) 10%,
+    //     transparent 40%
+    //   ),
+    //   conic-gradient(
+    //     from 180deg at 50% 50%,
+    //     $blue-hex 0%,
+    //     $alternate-bg-color 20%,
+    //     $pink-hex 40%,
+    //     $orange-hex 60%,
+    //     $yellow-hex 80%,
+    //     $green-hex 95%,
+    //     $blue-hex 100%
+    //   );
 
     @include tablet-breakpoint {
       padding: 2.5rem 2rem;
@@ -27,16 +48,17 @@
     }
 
     &-title {
-      font-size: 1.5rem;
-      color: $primary-text-color;
+      margin-top: 15%;
+      font-size: 2.5rem;
+      color: $white-hex;
 
       @include tablet-breakpoint {
-        font-size: 2rem;
+        font-size: 3.5rem;
       }
     }
 
     &-subtitle {
-      font-size: 0.7rem;
+      font-size: 1.5rem;
       display: flex;
       justify-content: flex-end;
       color: $secondary-text-color;
@@ -48,22 +70,37 @@
   }
 
   &__text {
+    border: 3px solid transparent;
+    border-radius: 20px;
+    border-image-source: conic-gradient(
+      from 180deg at 50% 50%,
+      $blue-hex 0%,
+      $alternate-bg-color 20%,
+      $pink-hex 40%,
+      $orange-hex 60%,
+      $yellow-hex 80%,
+      $green-hex 95%,
+      $blue-hex 100%
+    );
+    border-image-slice: 1;
+    font-family: "Lora", serif;
+    height: 35%;
+    width: 60%;
+    border-radius: 20px;
     font-size: 1.125rem;
     margin-bottom: 1.875rem;
-    color: $primary-text-color;
+    color: $font-hex;
+    text-align: center;
+    padding: 40px;
 
     @include tablet-breakpoint {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
 
   &__button {
     font-family: "Roboto Condensed", sans-serif;
-    @include button-style(
-      $alternate-color,
-      $primary-cta-color,
-      $primary-hover-cta-color
-    );
+    @include button-style($alternate-color, $yellow-hex, $orange-hex);
     margin-bottom: 10rem;
 
     @include tablet-breakpoint {
