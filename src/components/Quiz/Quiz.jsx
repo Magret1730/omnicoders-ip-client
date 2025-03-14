@@ -2,6 +2,8 @@ import "./Quiz.scss";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import PopUp from "../PopUp/PopUp.jsx";
+import { useNavigate } from "react-router-dom";
+
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
@@ -11,10 +13,9 @@ function Quiz() {
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [questionId, setQuestionId] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
-
-  const handleOptionClick = (index) => {
-    setSelectedOption(index);
-  };
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null); 
+  const [score, setScore] = useState(0); 
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const getQuestions = async () => {
@@ -31,30 +32,54 @@ function Quiz() {
     getQuestions();
   }, []);
 
-  const currentQuestionData = questions[currentQuestion];
-
-  const handleNextQuestion = () => {
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    }
+  const handleOptionClick = (index) => {
+    setSelectedOption(index);
   };
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  const handleAnswerSubmit = () => {
+    if (selectedOption === null) {
+      alert("Please select an option before submitting.");
+      return;
+    }
 
-  if (error) {
-    return <p>{error}</p>;
-  }
+    const correctOption = questions[currentQuestion].correct_answer;
 
-  const openPopUp = (id) => {
-    setQuestionId(id);
+    if (questions[currentQuestion].options[selectedOption] === correctOption) {
+      setIsAnswerCorrect(true);
+      setScore((prevScore) => prevScore + 1);
+    } else {
+      setIsAnswerCorrect(false);
+    }
+
+    openPopUp();
+  };
+
+  const openPopUp = () => {
+    setQuestionId(questions[currentQuestion].id);
     setIsPopUpOpen(true);
   };
 
   const closePopUp = () => {
     setIsPopUpOpen(false);
   };
+
+  const handleNextQuestion = () => {
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+      setQuestionId(questions[currentQuestion + 1].id);
+      setIsAnswerCorrect(null);
+      setSelectedOption(null); 
+      setIsPopUpOpen(false);
+      setSelectedOption(null);
+    } else {
+      navigate("/summary", { state: { score, totalQuestions: questions.length } });
+    }
+  };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
+
+  const currentQuestionData = questions[currentQuestion];
 
   return (
     <>
@@ -82,10 +107,7 @@ function Quiz() {
                 </div>
               ))}
             </div>
-            <button
-              className="quiz__submit"
-              onClick={() => openPopUp(questionId)}
-            >
+            <button className="quiz__submit" onClick={handleAnswerSubmit}>
               Submit
             </button>
           </>
@@ -93,10 +115,12 @@ function Quiz() {
           <p>No questions found</p>
         )}
 
-        <PopUp
-          isOpen={isPopUpOpen}
-          onClose={closePopUp}
-          questionId={questionId}
+        <PopUp 
+          isOpen={isPopUpOpen} 
+          onClose={closePopUp} 
+          questionId={questionId} 
+          isAnswerCorrect={isAnswerCorrect} 
+          handleNextQuestion={handleNextQuestion}
         />
       </div>
     </>
