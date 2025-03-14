@@ -49,7 +49,7 @@
   &__submit {
     @include button-font;
     margin-top: 3rem;
-    border-radius: 0.625rem;
+    border-radius: 1.25rem;
     border-width: 0;
     width: 100%;
     padding: 0.65rem 1rem;
@@ -79,15 +79,7 @@
     z-index: 1;
     right: 5rem;
 
-    background-color: conic-gradient(
-      $blue-hex 0%,
-      $alternate-bg-color 20%,
-      $pink-hex 40%,
-      $orange-hex 60%,
-      $yellow-hex 80%,
-      $green-hex 95%,
-      $blue-hex 100%
-    );
+    background-color: $white-hex;
     @include tablet-breakpoint {
       right: 7.5rem;
     }
