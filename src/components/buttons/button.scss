@@ -1,0 +1,51 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.button {
+  @include type-h3;
+  height: 2.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1.25rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+
+  @include tablet {
+    width: fit-content;
+    padding: 0 1.5rem;
+  }
+
+  &__start {
+    background-color: $primary-cta-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($green, 10%);
+    }
+  }
+
+  &__submit {
+    background-color: $blue;
+    color: $white;
+
+    &:hover {
+      background-color: darken($blue, 10%);
+    }
+  }
+
+  &__next {
+    background-color: $instock-indigo;
+    color: $white;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: $graphite;
+    }
+  }
+}

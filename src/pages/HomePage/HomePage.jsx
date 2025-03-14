@@ -9,8 +9,14 @@ function HomePage() {
         <h3 className="home-page__logo-subtitle">LESS</h3>
       </section>
 
-      <p className="home-page__text">Sentence - AI knowledge test?</p>
-      <Link to="/questions"><button className="home-page__button">Start</button></Link>
+      <p className="home-page__text">
+        Test your AI knowledge! AI isn’t here to replace you—it’s here to help,
+        from smart recommendations to automated assistants. Take this quiz to
+        see how AI enhances daily life and unlocks new opportunities!
+      </p>
+      <Link to="/questions">
+        <button className="home-page__button">Start</button>
+      </Link>
     </section>
   );
 }

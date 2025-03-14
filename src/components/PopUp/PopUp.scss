@@ -8,20 +8,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.80);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;  
+  z-index: 10;
 }
 
 .popup__content {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  width: 400px;
+  background-color: $white-hex;
+  padding: 24px;
+  border-radius: 1.25rem;
+  width: 25rem;
   max-width: 90%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   position: relative;
   transition: transform 0.3s ease-in-out;
   transform: scale(1);
@@ -32,30 +32,29 @@
 }
 
 .popup__body {
-  font-family: "Roboto";
-  font-size: 16px;
+  @include body-text;
+  font-size: 1rem;
   line-height: 1.6;
   text-align: center;
 }
 
 .popup__body p {
-  margin-top: 1rem;
-  margin-bottom: 20px;
-  font-family: "Roboto";
+  margin-top: 16px;
+  margin-bottom: 1.25rem;
+  @include body-text;
   font-size: 1rem;
   color: #333;
   font-weight: normal;
 }
 
 .popup__body button {
+  @include button-font;
   margin-top: 20px;
   padding: 1rem 3rem;
   background-color: $primary-text-color;
-  color: white;
+  color: $white-hex;
   border: none;
-  font-family: "Roboto";
-  font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 1.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -64,12 +63,12 @@
   background-color: $primary-hover-cta-color;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .popup__content {
     width: 90%;
   }
 
   .popup__body {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
