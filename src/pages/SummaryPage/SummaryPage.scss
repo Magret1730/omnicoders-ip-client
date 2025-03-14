@@ -1,0 +1,90 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
+    background-color: $alternate-bg-color;
+    font-family: $typeface-primary;
+
+    &-page {
+        background-color: $alternate-color;
+        padding: 3rem 2.5rem;
+        border-radius: 50%;
+        line-height: 1.2rem;
+        animation: bounceIn 5s ease-out;
+
+        @include tablet-breakpoint {
+            padding: 5.5rem 5rem;
+            line-height: 1.7rem;
+        }
+        
+        @include desktop-breakpoint {
+            padding: 7.5rem 7rem;
+            line-height: 2rem;
+        }
+
+        &-title {
+            font-size: 1.5rem;
+            color: $primary-text-color;
+
+            @include tablet-breakpoint {
+                font-size: 2.2rem;
+            }
+
+            @include desktop-breakpoint {
+                font-size: 3rem;
+            }
+        }
+
+        &-subtitle {
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            color: $secondary-text-color;
+
+            @include tablet-breakpoint {
+                font-size: 1.2rem;
+            }
+
+            @include desktop-breakpoint {
+                font-size: 2rem;
+            }
+        }
+    }
+}
