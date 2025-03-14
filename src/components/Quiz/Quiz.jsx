@@ -124,6 +124,11 @@ function Quiz() {
           questionId={questionId} 
           isAnswerCorrect={isAnswerCorrect} 
           handleNextQuestion={handleNextQuestion}
+          currentQuestion={currentQuestion}
+          answer={isAnswerCorrect}
+          userAnswer = {selectedOption}
+          questions = {questions}
+
         />
       </div>
     </>
