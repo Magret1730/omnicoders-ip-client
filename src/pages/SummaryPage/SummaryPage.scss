@@ -83,7 +83,7 @@
   @include body-text;
 
   color: $blue-hex;
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
   line-height: 1.6;
@@ -92,14 +92,13 @@
 .summary-fact {
   @include body-text;
   color: $primary-text-color;
-  font-weight: bold;
   margin-bottom: 15px;
   text-align: center;
 }
 
 .summary-more {
   @include body-text;
-  color: #555;
+  color: black;
   margin-top: 10px;
   text-align: center;
 }
