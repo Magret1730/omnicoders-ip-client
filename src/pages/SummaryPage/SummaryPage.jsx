@@ -3,7 +3,7 @@ import "./SummaryPage.scss";
 
 function SummaryPage() {
   const location = useLocation();
-  const { score, totalQuestions } = location.state || {}; // Retrieve score and total questions
+  const { score, totalQuestions } = location.state || {}; 
 
   let message = "";
   if (score === totalQuestions) {
@@ -20,10 +20,10 @@ function SummaryPage() {
         <h3 className="summary-page-subtitle">
           {score} out of {totalQuestions}
         </h3>
-        <p>{message}</p>
-        <p>Fun Fact: Did you know that AI is also used in areas like art creation, climate predictions, and even helping to design new products?</p>
-        <p>Want to learn more about AI and its impact on the future? Check out more resources on AI!</p>
       </section>
+      <p className="summary-message">{message}</p>
+        <p className="summary-fact">Fun Fact: Did you know that AI is also used in areas like art creation, climate predictions, and even helping to design new products?</p>
+        <p className="summary-more">Want to learn more about AI and its impact on the future? Check out more resources on AI!</p>
     </section>
   );
 }
