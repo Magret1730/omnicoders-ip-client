@@ -5,15 +5,33 @@ import "./PopUp.scss";
 
 const API_URL = import.meta.env.VITE_API_URL; // ✅ Define API_URL properly
 
-function PopUp({ isOpen, onClose, questionId, isAnswerCorrect, handleNextQuestion }) {
+function PopUp({
+  isOpen,
+  onClose,
+  questionId,
+  isAnswerCorrect,
+  handleNextQuestion,
+  currentQuestion,
+  answer,
+  userAnswer,
+  questions,
+}) {
   const [explanation, setExplanation] = useState("");
 
   useEffect(() => {
     if (isOpen && questionId) {
+      const queryParams = new URLSearchParams({
+        question: questions[currentQuestion].question,
+        correct_answer: questions[currentQuestion].correct_answer,
+        user_answer: questions[currentQuestion].options[userAnswer],
+      }).toString();
+
+      const requestUrl = `${API_URL}/ask-gemini?${queryParams}`;
+      console.log(requestUrl)
       axios
-        .get(`${API_URL}/explanation/${questionId}`) // ✅ Using API_URL instead of hardcoded localhost
+        .get(requestUrl) // ✅ Using API_URL instead of hardcoded localhost
         .then((response) => {
-          setExplanation(response.data.explanation);
+          setExplanation(response.data.response);
         })
         .catch((error) => {
           console.error("Error fetching explanation:", error);
@@ -26,17 +44,16 @@ function PopUp({ isOpen, onClose, questionId, isAnswerCorrect, handleNextQuestio
 
   return (
     <div className="popup">
-    <div className="popup__content">
-      <h3>{isAnswerCorrect ? "✅ Correct!" : "❌ Wrong Answer"}</h3>
-      <div className="popup__body">
-        <p>{explanation}</p>
-        <button onClick={handleNextQuestion}>Next</button>
+      <div className="popup__content">
+        <h3>{isAnswerCorrect ? "✅ Correct!" : "❌ Wrong Answer"}</h3>
+        <div className="popup__body">
+          <p>{explanation}</p>
+          <button onClick={handleNextQuestion}>Next</button>
+        </div>
       </div>
     </div>
-  </div>
   );
 }
-
 
 PopUp.propTypes = {
   isOpen: PropTypes.bool.isRequired,
